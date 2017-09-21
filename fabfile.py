@@ -6,5 +6,6 @@ def prepare_deployment(branch_name):
 
 def deploy():
     with lcd('/c/Users/Home/django/regency_portal'):
-    	local('git pull /c/Users/Home/dev/regency_portal')
-
+        local('git pull /c/Users/Home/dev/regency_portal')
+        local('python manage.py migrate tickets')
+        local('python manage.py test tickets')
